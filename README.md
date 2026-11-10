@@ -6,16 +6,12 @@ Add the marketplace once, then install the plugins you want:
 
 ```bash
 claude plugin marketplace add jasons-work-projects/claude-plugins
-claude plugin install progress@jason301c
+claude plugin install images@jason301c
 ```
 
-Or ask Claude: "Add the plugin marketplace jasons-work-projects/claude-plugins and install the progress plugin from it." Start a new session afterwards so the plugin loads.
+Or ask Claude: "Add the plugin marketplace jasons-work-projects/claude-plugins and install the images plugin from it." Start a new session afterwards so the plugin loads.
 
 The plugins use function-hook modules, so they need a recent Claude Code version. To get updates, run `claude plugin marketplace update jason301c`.
-
-## progress
-
-A one-line progress band above the prompt. Claude sets it during large, multi-phase jobs with a percent, a state (working, needs you, failed, done) and a short text. It works in the terminal and in the desktop app's Code tab.
 
 ## images
 
@@ -32,7 +28,3 @@ OPENROUTER_API_KEY=sk-or-...
 A status line with the number of connected MCP servers, this session's spend at API list prices, and a countdown to when the prompt cache expires. It needs Node.
 
 The plugin also writes these figures to `~/.cache/claude-statusline-<session id>.json`. If your own `statusLine` command reads that file and draws the figures, turn on the `terminalScript` option. The plugin then shows no line of its own in a terminal.
-
-## agents-skills
-
-Loads skills from `.agents/skills` folders as Claude Code skills. It looks in your home folder and in every folder from the root down to the working directory. A nearer folder wins over a farther one, and a Claude Code skill with the same name wins over both.
